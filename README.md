@@ -20,7 +20,7 @@ https://kamarushem-necitizen.github.io/Akan-Name-Generator/
 ## BBD (Behavior-Driven Development)
 - User enters a valid birth date and gender - The application displays the correct Akan name.
 
-- User leaves the birth date empty - User leaves the birth date empty
+- User leaves the birth date empty -   The application displays an error message.
 
 - User does not select a gender - The application displays an error message
 

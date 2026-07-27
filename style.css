@@ -1,0 +1,54 @@
+body {
+    margin: o;
+    min-height: 100vh;
+    background-color: #fff8e7;
+    border-radius: 12px;
+    border-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #4e342e;
+    text-align: center;
+}
+
+h2 {
+    color: #4e342e;
+    text-align: center;
+}
+
+h6 {
+    color: #4e342e;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+    line-height: 1.6;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input: focus,
+select: focus {
+    border-color: gold;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+
+}

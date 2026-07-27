@@ -10,11 +10,13 @@ body {
 h1 {
     color: #4e342e;
     text-align: center;
+    margin-top: 0;
 }
 
 h2 {
     color: #4e342e;
     text-align: center;
+    margin-top: 28px;
 }
 
 h5 {
@@ -50,5 +52,23 @@ button {
     padding: 12px;
     border-radius: 6px;
     cursor: pointer;
+    margin-top: 10px;
+}
 
+button:hover {
+    background-color: #6d4c41;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#result-message {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: forestgreen;
+   box-shadow: 0 4px 10px rgba(139, 94, 0, 0.2);
 }

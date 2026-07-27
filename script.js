@@ -36,32 +36,20 @@ form.addEventListener("submit", function (event) {
   // Get the date and gender values from the form
   form.addEventListener("submit", function (event) {
   event.preventDefault();
+
    const day = Number(dayInput.value);
    let month = Number(monthInput.value);
    let year = Number(yearInput.value);
   const gender = genderInput.value;
 
-  // Check that the user entered both a date and gender
-   if (day < 1 || day > 31) {
-  alert("Please enter a valid day between 1 and 31.");
-  return;
-}
 
-if (month < 1 || month > 12) {
-  alert("Please enter a valid month between 1 and 12.");
-  return;
-}
 
 if (gender === "") {
   alert("Please select your gender.");
   return;
 }
 
-  // A date input returns a date in this format: YYYY-MM-DD
-  // Example: 2000-05-12
-  const dateParts = birthdate.split("-");
 
-   
   // Validate the day and month ranges
   if (day < 1 || day > 31 || month < 1 || month > 12) {
     alert("Please enter a valid day and month.");

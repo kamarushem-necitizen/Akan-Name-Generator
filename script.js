@@ -1,6 +1,8 @@
 // Get the form and HTML elements using their id names
 const form = document.getElementById("akan-name-form");
-const birthdateInput = document.getElementById("birthdate");
+const  dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
 const genderInput = document.getElementById("gender");
 const resultMessage = document.getElementById("result-message");
 
@@ -32,24 +34,34 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   // Get the date and gender values from the form
-  const birthdate = birthdateInput.value;
+  form.addEventListener("submit", function (event) {
+  event.preventDefault();
+   const day = Number(dayInput.value);
+   let month = Number(monthInput.value);
+   let year = Number(yearInput.value);
   const gender = genderInput.value;
 
   // Check that the user entered both a date and gender
-  if (birthdate === "" || gender === "") {
-    alert("Please enter your date of birth and select your gender.");
-    return;
-  }
+   if (day < 1 || day > 31) {
+  alert("Please enter a valid day between 1 and 31.");
+  return;
+}
+
+if (month < 1 || month > 12) {
+  alert("Please enter a valid month between 1 and 12.");
+  return;
+}
+
+if (gender === "") {
+  alert("Please select your gender.");
+  return;
+}
 
   // A date input returns a date in this format: YYYY-MM-DD
   // Example: 2000-05-12
   const dateParts = birthdate.split("-");
 
-  // Convert the date parts from text to numbers
-  let year = Number(dateParts[0]);
-  let month = Number(dateParts[1]);
-  const day = Number(dateParts[2]);
-
+   
   // Validate the day and month ranges
   if (day < 1 || day > 31 || month < 1 || month > 12) {
     alert("Please enter a valid day and month.");

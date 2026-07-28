@@ -5,7 +5,19 @@ const monthInput = document.getElementById("month");
 const yearInput = document.getElementById("year");
 const genderInput = document.getElementById("gender");
 const resultMessage = document.getElementById("result-message");
+const genderButtons = document.querySelectorAll(".gender-button");
 
+genderButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    genderInput.value = button.dataset.gender;
+
+    genderButtons.forEach(function (item) {
+      item.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+  });
+});
 // Akan names: Sunday is position 0 and Saturday is position 6
 const maleNames = [
   "Kwasi",
@@ -119,6 +131,9 @@ resultMessage.innerHTML = `
 
   // Clear the form fields after showing the result
   form.reset();
+  genderButtons.forEach(function (button) {
+  button.classList.remove("selected");
+});
 });
 
  

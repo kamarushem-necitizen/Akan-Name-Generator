@@ -37,15 +37,19 @@
   <input type="number" id="year" min="1900" max="2026" required>
 </div>
       
-      <h2>Gender:</h2> 
-      <div>
-         <select name="gender" id="gender">
-          <option value="">--select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-         </select>
-      </div>
-      <br>
+  <h2>Gender</h2>
+
+<div class="gender-buttons">
+  <input type="hidden" id="gender" value="">
+
+  <button type="button" class="gender-button" data-gender="male">
+    Male
+  </button>
+
+  <button type="button" class="gender-button" data-gender="female">
+    Female
+  </button>
+</div>     
 
       <h2>Submit:</h2>
 <!-- Sends the form information to JavaScript -->

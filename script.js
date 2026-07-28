@@ -105,3 +105,15 @@ form.addEventListener("submit", function (event) {
   // Clear the form fields after showing the result
   form.reset();
 });
+
+const output = document.getElementById("output");
+
+output.innerHTML = `
+  <h2>🎉 Congratulations, ${akanName}!</h2>
+  <p>You were born on <strong>${days[dayIndex]}</strong>.</p>
+  <p>
+    Based on your birth day and gender, your traditional Akan name is
+    <strong>${akanName}</strong>.
+  </p>
+  <p>Thank you for using the Akan Name Generator.</p>
+`;

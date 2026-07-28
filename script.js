@@ -106,6 +106,16 @@ form.addEventListener("submit", function (event) {
   form.reset();
 });
 
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
 const output = document.getElementById("output");
 
 output.innerHTML = `

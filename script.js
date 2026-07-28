@@ -118,7 +118,7 @@ const days = [
 
 const output = document.getElementById("output");
 
-output.innerHTML = `
+resultMessage.innerHTML = `
   <h2>🎉 Congratulations, ${akanName}!</h2>
   <p>You were born on <strong>${days[dayIndex]}</strong>.</p>
   <p>

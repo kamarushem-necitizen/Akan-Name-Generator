@@ -100,13 +100,7 @@ form.addEventListener("submit", function (event) {
   }
 
   // Show the name on the webpage
-  resultMessage.textContent = `Your Akan name is ${akanName}.`;
-
-  // Clear the form fields after showing the result
-  form.reset();
-});
-
-const days = [
+  const days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -116,14 +110,15 @@ const days = [
   "Saturday"
 ];
 
-const output = document.getElementById("output");
-
 resultMessage.innerHTML = `
   <h2>🎉 Congratulations, ${akanName}!</h2>
-  <p>You were born on <strong>${days[dayIndex]}</strong>.</p>
-  <p>
-    Based on your birth day and gender, your traditional Akan name is
-    <strong>${akanName}</strong>.
-  </p>
+  <p>You were born on <strong>${days[dayOfWeek]}</strong>.</p>
+  <p>Based on your birth day and gender, your traditional Akan name is <strong>${akanName}</strong>.</p>
   <p>Thank you for using the Akan Name Generator.</p>
 `;
+
+  // Clear the form fields after showing the result
+  form.reset();
+});
+
+ 

@@ -73,3 +73,37 @@ label {
   color: forestgreen;
    box-shadow: 0 4px 10px rgba(139, 94, 0, 0.2);
 }
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #4e342e;
+}
+
+/* mobile responsiveness*/
+@media(max-width:768px){
+    .container {
+        width:90%;
+    } 
+
+    #gender {
+        flex-direction: column;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+
+/*responsive*/
+@media(max-width:600px){
+    
+    .button{
+        flex-direction: column;
+    }
+    #gender{
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,12 +1,10 @@
-// Get the form and HTML elements using their id names
-const form = document.getElementById("akan-name-form");
+ const form = document.getElementById("akan-name-form");
 const dayInput = document.getElementById("day");
 const monthInput = document.getElementById("month");
 const yearInput = document.getElementById("year");
 const genderInput = document.getElementById("gender");
 const resultMessage = document.getElementById("result-message");
- 
-// Akan names: Sunday is position 0 and Saturday is position 6
+
 const maleNames = [
   "Kwasi",
   "Kwadwo",
@@ -27,35 +25,29 @@ const femaleNames = [
   "Ama"
 ];
 
-// Run this code when the form is submitted
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
 form.addEventListener("submit", function (event) {
-  // Stop the page from refreshing
   event.preventDefault();
 
-  // Get values entered by the user
   const day = Number(dayInput.value);
   let month = Number(monthInput.value);
   let year = Number(yearInput.value);
   const gender = genderInput.value;
 
-  // Validate gender
   if (gender === "") {
     alert("Please select your gender.");
     return;
   }
 
-  // Validate day and month
-  if (day < 1 || day > 31) {
-    alert("Please enter a valid day between 1 and 31.");
-    return;
-  }
-
-  if (month < 1 || month > 12) {
-    alert("Please enter a valid month between 1 and 12.");
-    return;
-  }
-
-  // Check for impossible dates, such as 31 February
   const checkDate = new Date(year, month - 1, day);
 
   if (
@@ -67,18 +59,14 @@ form.addEventListener("submit", function (event) {
     return;
   }
 
-  // January and February become months 13 and 14
-  // of the previous year for the Akan day formula
   if (month === 1 || month === 2) {
     month += 12;
     year -= 1;
   }
 
-  // Get century and last two digits of the year
   const CC = Math.floor(year / 100);
   const YY = year % 100;
 
-  // Calculate the day of the week using the required formula
   let dayOfWeek =
     Math.floor(CC / 4) -
     2 * CC -
@@ -87,39 +75,20 @@ form.addEventListener("submit", function (event) {
     Math.floor((26 * (month + 1)) / 10) +
     day;
 
-  // Keep the result between 0 and 6
   dayOfWeek = ((dayOfWeek % 7) + 7) % 7;
 
-  // Select the correct Akan name
-  let akanName;
+  const akanName =
+    gender === "male" ? maleNames[dayOfWeek] : femaleNames[dayOfWeek];
 
-  if (gender === "male") {
-    akanName = maleNames[dayOfWeek];
-  } else {
-    akanName = femaleNames[dayOfWeek];
-  }
+  resultMessage.innerHTML = `
+    <h2>🎉 Congratulations, ${akanName}!</h2>
+    <p>You were born on <strong>${days[dayOfWeek]}</strong>.</p>
+    <p>
+      Based on your birth day and gender, your traditional Akan name is
+      <strong>${akanName}</strong>.
+    </p>
+    <p>Thank you for using the Akan Name Generator.</p>
+  `;
 
-  // Show the name on the webpage
-  const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-
-resultMessage.innerHTML = `
-  <h2>🎉 Congratulations, ${akanName}!</h2>
-  <p>You were born on <strong>${days[dayOfWeek]}</strong>.</p>
-  <p>Based on your birth day and gender, your traditional Akan name is <strong>${akanName}</strong>.</p>
-  <p>Thank you for using the Akan Name Generator.</p>
-`;
-
-  // Clear the form fields after showing the result
   form.reset();
 });
-
-
- 

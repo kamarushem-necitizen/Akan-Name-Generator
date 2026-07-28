@@ -119,8 +119,7 @@ resultMessage.innerHTML = `
 
   // Clear the form fields after showing the result
   form.reset();
-  genderButtons.forEach(function (button) {
 });
-});
+
 
  

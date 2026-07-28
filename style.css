@@ -1,117 +1,145 @@
+ * {
+  box-sizing: border-box;
+}
+
 body {
-    margin: o;
-    min-height: 100vh;
-    background-color: #fff8e7;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #fff8e7;
+  font-family: Arial, sans-serif;
+  color: #4e342e;
+}
+
+main {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  color: #4e342e;
+  text-align: center;
 }
 
 h1 {
-    color: #4e342e;
-    text-align: center;
-    margin-top: 0;
+  margin-top: 0;
 }
 
 h2 {
-    color: #4e342e;
-    text-align: center;
-    margin-top: 28px;
+  margin-top: 28px;
 }
 
-h5 {
-    color: #4e342e;
-    text-align: center;
+main > p {
+  line-height: 1.6;
+  text-align: center;
 }
 
-p {
-    text-align: left;
-    line-height: 1.6;
+/* Centered date-of-birth and gender form */
+#akan-name-form {
+  width: 90%;
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-form div {
-    margin-bottom: 10px;
+#akan-name-form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
 input,
 select {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid gray;
-    border-radius: 8px;
-    font-size: 16px;
+  width: 100%;
+  max-width: 280px;
+  padding: 12px;
+  border: 2px solid gray;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 input:focus,
 select:focus {
-    border-color: black;
+  border-color: black;
+  outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 100%;
+  max-width: 280px;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #6d4c41;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
-    border-radius: 6px ; 
-    border-color: black;
+  background-color: #4e342e;
 }
 
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
+/* Result message */
+#result {
+  width: 90%;
+  max-width: 650px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(139, 94, 0, 0.2);
 }
 
 #result-message {
   margin-bottom: 0;
   font-size: 18px;
-  font-weight: bold;
   color: forestgreen;
-   box-shadow: 0 4px 10px rgba(139, 94, 0, 0.2);
+  text-align: center;
 }
 
+/* Footer with a separating line */
 .site-footer {
-  margin-top: 3rem;
+  width: 90%;
+  max-width: 850px;
+  margin: 3rem auto 0;
   padding: 1.5rem 1rem;
   text-align: center;
   color: #4e342e;
+  border-top: 1px solid #4e342e;
 }
 
-.site-footer hr {
-    border: none;
-    border-top: 1px solid black;
-    margin-bottom: 10px;
+.site-footer p {
+  margin: 0;
+  text-align: center;
 }
 
-/* mobile responsiveness*/
-@media(max-width:768px){
-    .container {
-        width:90%;
-    } 
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  body {
+    padding: 1.5rem 0.5rem;
+  }
 
-    #gender {
-        flex-direction: column;
-    }
+  #akan-name-form {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
 
-    button{
-        width: 100%;
-    }
+  input,
+  select,
+  button {
+    max-width: 100%;
+  }
 }
-
-/*responsive*/
-@media(max-width:600px){
-    
-    .button{
-        flex-direction: column;
-    }
-    #gender{
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-  
